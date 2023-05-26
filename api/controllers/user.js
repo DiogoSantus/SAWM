@@ -1,7 +1,7 @@
 import { db } from "../db.js";
 
 export const getUsers = (_, res) => {
-  const q = "SELECT * FROM usuarios";
+  const q = "SELECT * FROM utilizadores";
 
   db.query(q, (err, data) => {
     if (err) return res.json(err);
@@ -12,7 +12,7 @@ export const getUsers = (_, res) => {
 
 export const addUser = (req, res) => {
   const q =
-    "INSERT INTO usuarios(`nome`, `email`, `telefone`, `data_nascimento`) VALUES(?)";
+    "INSERT INTO utilizadores(`nome`, `email`, `telefone`, `data_nascimento`) VALUES(?)";
 
   const values = [
     req.body.nome,
@@ -24,13 +24,13 @@ export const addUser = (req, res) => {
   db.query(q, [values], (err) => {
     if (err) return res.json(err);
 
-    return res.status(200).json("Usuário criado com sucesso.");
+    return res.status(200).json("Utilizador criado com sucesso.");
   });
 };
 
 export const updateUser = (req, res) => {
   const q =
-    "UPDATE usuarios SET `nome` = ?, `email` = ?, `telefone` = ?, `data_nascimento` = ? WHERE `id` = ?";
+    "UPDATE utilizadores SET `nome` = ?, `email` = ?, `telefone` = ?, `data_nascimento` = ? WHERE `id` = ?";
 
   const values = [
     req.body.nome,
@@ -42,16 +42,16 @@ export const updateUser = (req, res) => {
   db.query(q, [...values, req.params.id], (err) => {
     if (err) return res.json(err);
 
-    return res.status(200).json("Usuário atualizado com sucesso.");
+    return res.status(200).json("Utilizador atualizado com sucesso.");
   });
 };
 
 export const deleteUser = (req, res) => {
-  const q = "DELETE FROM usuarios WHERE `id` = ?";
+  const q = "DELETE FROM utilizadores WHERE `id` = ?";
 
   db.query(q, [req.params.id], (err) => {
     if (err) return res.json(err);
 
-    return res.status(200).json("Usuário deletado com sucesso.");
+    return res.status(200).json("Utilizador eliminado com sucesso.");
   });
 };
