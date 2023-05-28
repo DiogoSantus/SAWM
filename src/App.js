@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 
 import { Navbar, Homepage, Cryptocurrencies, News, CryptoDetails } from './components';
@@ -14,6 +14,9 @@ import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import Home from './components/Home';
+import Register from './components/Register';
+import Login from './components/Login';
 
 const Container = styled.div`
     width: 100%;
@@ -58,6 +61,13 @@ const App = () => {
 
     return (
         <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<Home />}></Route>
+                    <Route path='/register' element={<Register />}></Route>
+                    <Route path='/login' element={<Login />}></Route>
+                </Routes>
+            </BrowserRouter>
             <div className="app">
                 <div className="navbar">
                     <Navbar />
