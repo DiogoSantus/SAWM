@@ -1,0 +1,25 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "nome": "João Silva",
+            "email": "joaosilva@email.com",
+            "telefone": "+351 912 345 678",
+            "data_nascimento": "1990-01-15"
+        },
+        {
+            "id": 2,
+            "nome": "Maria Fernandes",
+            "email": "mariafernandes@email.com",
+            "telefone": "+351 934 567 890",
+            "data_nascimento": "1985-02-28"
+        },
+        {
+            "id": 3,
+            "nome": "Pedro Costa",
+            "email": "pedrocosta@email.com",
+            "telefone": "+351 967 123 456",
+            "data_nascimento": "1978-07-10"
+        }
+    ]
+}

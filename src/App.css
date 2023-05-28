@@ -422,3 +422,36 @@ div.ant-space-item > a:hover, span.espacamento > p > a:hover, div.ant-row > a:ho
     padding-left: 18px;
     padding-right: 18px;
 }
+
+h2.sc-fthguw {
+    margin-left: 450px;
+}
+
+form.sc-eLqIir {
+    margin-left: 448px;
+    width: 925px;
+}
+
+div.sc-HzRMQ {
+    padding-left: 20px;
+}
+
+div.sc-HzRMQ label {
+    text-align: center !important;
+}
+
+input.nome {
+    width: 200px;
+}
+
+input.email {
+    width: 185px;
+}
+
+input.data_nascimento {
+    width: 150px;
+}
+
+button.sc-bzGLQt {
+    margin: 0 auto !important;
+}

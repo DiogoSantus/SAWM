@@ -69,7 +69,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
 
     if (onEdit) {
       await axios
-        .put("http://localhost:8800/" + onEdit.id, {
+        .put("http://localhost:8800/users/" + onEdit.id, {
           nome: user.nome.value,
           email: user.email.value,
           telefone: user.telefone.value,
@@ -79,7 +79,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         .catch(({ data }) => toast.error(data));
     } else {
       await axios
-        .post("http://localhost:8800", {
+        .post("http://localhost:8800/users", {
           nome: user.nome.value,
           email: user.email.value,
           telefone: user.telefone.value,
@@ -102,22 +102,22 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
     <FormContainer ref={ref} onSubmit={handleSubmit}>
       <InputArea>
         <Label>Nome</Label>
-        <Input name="nome" />
+        <Input name="nome" className="nome" />
       </InputArea>
       <InputArea>
         <Label>E-mail</Label>
-        <Input name="email" type="email" />
+        <Input name="email" type="email" className="email" />
       </InputArea>
       <InputArea>
         <Label>Telefone</Label>
-        <Input name="telefone" />
+        <Input name="telefone" className="telefone" />
       </InputArea>
       <InputArea>
         <Label>Data de Nascimento</Label>
-        <Input name="data_nascimento" type="date" />
+        <Input name="data_nascimento" type="date" className="data_nascimento" />
       </InputArea>
 
-      <Button type="submit">SALVAR</Button>
+      <Button type="submit">GUARDAR</Button>
     </FormContainer>
   );
 };
